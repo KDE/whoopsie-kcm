@@ -1,0 +1,19 @@
+<node>
+ <interface name="com.ubuntu.WhoopsiePreferences">
+  <property name="ReportCrashes" type="b" access="read" />
+  <property name="ReportMetrics" type="b" access="read" />
+  <property name="AutomaticallyReportCrashes" type="b" access="read" />
+  <method name="SetReportCrashes">
+   <arg direction="in" type="b" name="report" />
+  </method>
+  <method name="SetReportMetrics">
+   <arg direction="in" type="b" name="report" />
+  </method>
+  <method name="SetAutomaticallyReportCrashes">
+   <arg direction="in" type="b" name="report" />
+  </method>
+  <method name="GetIdentifier">
+   <arg direction="out" type="s" name="identifier" />
+  </method>
+ </interface>
+</node>
