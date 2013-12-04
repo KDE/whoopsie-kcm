@@ -26,14 +26,11 @@
 #include <KPluginFactory>
 #include <KToolInvocation>
 #include <KAuth/Action>
-#include <KAuth/ActionWatcher>
 
 #include <QFontMetrics>
 
 #include "WhoopsiePreferences.h"
 #include "Version.h"
-
-#include <unistd.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmWhoopsieFactory);
 
