@@ -46,7 +46,7 @@ Module::Module(QWidget *parent, const QVariantList &args)
                                                          this))
 {
     KAboutData *about = new KAboutData("kcm-whoopsie", 0,
-                                       ki18n("((Name))"),
+                                       ki18n("Diagnostics"),
                                        global_s_versionStringFull,
                                        KLocalizedString(),
                                        KAboutData::License_GPL_V3,

@@ -9,8 +9,8 @@ X-KDE-System-Settings-Parent-Category=system-administration
 X-KDE-System-Settings-Parent-Category-V2=system-administration
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=kcm-whoopsie
-X-KDE-Keywords=((X-KDE-Keywords))
+X-KDE-Keywords=privacy,diagnostic,crash,report,canonical,metric
 Categories=Qt;KDE;X-KDE-settings-system-administration;
 
 Name=Diagnostics
-Comment=((Comment))
+Comment=Automatic Crash and Metrics Reporting
