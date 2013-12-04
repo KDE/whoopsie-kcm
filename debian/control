@@ -1,0 +1,14 @@
+Source: kde-config-whoopsie
+Section: kde
+Priority: extra
+Maintainer: Harald Sitter <apachelogger@kubuntu.org>
+Build-Depends: debhelper (>= 9), pkg-kde-tools (>= 0.15.3ubuntu7), cmake,
+ kdelibs5-dev
+Standards-Version: 3.9.4
+X-Ubuntu-Use-Langpack: yes
+
+Package: kde-config-whoopsie
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, whoopsie-preferences, whoopsie
+Description: ((Description))
+ ((Description))
