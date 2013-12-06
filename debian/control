@@ -10,5 +10,6 @@ X-Ubuntu-Use-Langpack: yes
 Package: kde-config-whoopsie
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, whoopsie-preferences, whoopsie
-Description: ((Description))
- ((Description))
+Description: Configuration for Whoopsie
+ KConfig module for configuration of Whoopsie, the automatic error reporting
+ system from Canonical used in Ubuntu flavours.
