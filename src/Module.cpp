@@ -94,6 +94,11 @@ Module::Module(QWidget *parent, const QVariantList &args)
 
     // We have no help so remove the button from the buttons.
     setButtons(buttons() ^ KCModule::Help);
+
+#warning metrics are not implemented in whoopsie as of 2013-12-09
+    ui->metricsCheckBox->hide();
+    ui->metricsSpacer->changeSize(0, 0);
+    ui->metricsDescriptionLabel->hide();
 }
 
 Module::~Module()
