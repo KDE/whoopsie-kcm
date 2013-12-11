@@ -1,4 +1,4 @@
-kde-config-whoopsie (14.04ubuntu2) UNRELEASED; urgency=low
+kde-config-whoopsie (14.04ubuntu2) trusty; urgency=low
 
   * Hide metrics UI. Not implemented in whoopsie yet.
   * Align previous reports link to the left, otherwise it looks silly.
