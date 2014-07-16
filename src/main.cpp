@@ -18,11 +18,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <KGenericFactory>
 #include <KPluginFactory>
 
 #include "Module.h"
 
 K_PLUGIN_FACTORY(KcmWhoopsieFactory,
                  registerPlugin<Module>("kcm-whoopsie");)
-K_EXPORT_PLUGIN(KcmWhoopsieFactory("kcm-whoopsie"))
+
+#include "main.moc"

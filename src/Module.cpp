@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2013 Harald Sitter <apachelogger@kubuntu.org>
+    Copyright (C) 2013-2014 Harald Sitter <apachelogger@kubuntu.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -22,37 +22,38 @@
 #include "ui_Module.h"
 
 #include <KAboutData>
-#include <KDebug>
+#include <KAuthAction>
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KToolInvocation>
-#include <KAuth/Action>
 
 #include <QFontMetrics>
 
 #include "WhoopsiePreferences.h"
 #include "Version.h"
 
-K_PLUGIN_FACTORY_DECLARATION(KcmWhoopsieFactory);
-
 Module::Module(QWidget *parent, const QVariantList &args)
-    : KCModule(KcmWhoopsieFactory::componentData(), parent, args)
+    : KCModule(parent, args)
     , ui(new Ui::Module)
     , m_preferences(new com::ubuntu::WhoopsiePreferences(QLatin1String("com.ubuntu.WhoopsiePreferences"),
                                                          QLatin1String("/com/ubuntu/WhoopsiePreferences"),
                                                          QDBusConnection::systemBus(),
                                                          this))
 {
-    KAboutData *about = new KAboutData("kcm-whoopsie", 0,
-                                       ki18n("Diagnostics"),
-                                       global_s_versionStringFull,
-                                       KLocalizedString(),
-                                       KAboutData::License_GPL_V3,
-                                       ki18n("Copyright 2013 Harald Sitter"),
-                                       KLocalizedString(), QByteArray(),
-                                       "apachelogger@kubuntu.org");
+    KAboutData *aboutData = new KAboutData("kcm-whoopsie",
+                                        i18nc("@title", "Diagnostics"),
+                                        global_s_versionStringFull,
+                                        QStringLiteral(""),
+                                        KAboutLicense::LicenseKey::GPL_V3,
+                                        i18nc("@info:credit", "Copyright 2013-2014 Harald Sitter"));
 
-    about->addAuthor(ki18n("Harald Sitter"), ki18n("Author"), "apachelogger@kubuntu.org");
-    setAboutData(about);
+    aboutData->addAuthor(i18nc("@info:credit", "Harald Sitter"),
+                        i18nc("@info:credit", "Author"),
+                        QStringLiteral("apachelogger@kubuntu.org"));
+
+
+    setAboutData(aboutData);
+
     // Must NOT be set, as the builtin KAuth wiring expects an appropriate handler.
     // However since we use WhoopsiePreferences directly there is no KAuth handler
     // and turning on Authorization would only get in the way of manual handling in
@@ -60,7 +61,7 @@ Module::Module(QWidget *parent, const QVariantList &args)
     // setNeedsAuthorization(true);
     ui->setupUi(this);
 
-    ui->headingLabel->setText(i18nc("@info",
+    ui->headingLabel->setText(xi18nc("@info",
                                     "Kubuntu can collect anonymous information"
                                     " that helps developers improve it. All"
                                     " information collected is covered by our"
@@ -81,9 +82,7 @@ Module::Module(QWidget *parent, const QVariantList &args)
     // This avoids more excessive grouping techniques such as frames or boxes
     // which tend to look terribad in Oxygen.
     const QFontMetrics metrics(QApplication::font());
-    ui->verticalSpacer_2->changeSize(1, metrics.height());
-    ui->verticalSpacer_3->changeSize(1, metrics.height());
-    ui->verticalSpacer_4->changeSize(1, metrics.height());
+    layout()->setSpacing(metrics.height());
 
     connect(ui->crashesCheckBox, SIGNAL(toggled(bool)), this, SLOT(diff()));
     connect(ui->metricsCheckBox, SIGNAL(toggled(bool)), this, SLOT(diff()));
@@ -120,7 +119,7 @@ void Module::load()
 
     const QString reportsUrl =
             QString::fromLatin1("https://errors.ubuntu.com/user/%1").arg(m_preferences->GetIdentifier());
-    ui->previousReportsLabel->setText(i18nc("@info",
+    ui->previousReportsLabel->setText(xi18nc("@info",
                                             "<link url='%1'>Previous Reports</link>", reportsUrl));
     connect(ui->previousReportsLabel, SIGNAL(linkActivated(QString)), this, SLOT(openUrl(QString)));
 }
