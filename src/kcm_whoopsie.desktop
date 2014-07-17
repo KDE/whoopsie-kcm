@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 Icon=office-chart-area-focus-peak-node
-Exec=kcmshell4 kcm_whoopsie
+Exec=kcmshell5 kcm_whoopsie
 
 X-KDE-Library=kcm_whoopsie
 X-KDE-ServiceTypes=KCModule
