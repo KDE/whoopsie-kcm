@@ -1,4 +1,4 @@
-kde-config-whoopsie (14.10ubuntu1) UNRELEASED; urgency=medium
+kde-config-whoopsie (14.10ubuntu0+git20140731.1) utopic; urgency=medium
 
   * Port to KDE Frameworks 5
     + Simplify ui file to accomodate size hinting problems with word wrap
