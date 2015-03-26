@@ -1,7 +1,7 @@
-kde-config-whoopsie (14.10ubuntu0+git20140731.1) utopic; urgency=medium
+kde-config-whoopsie (15.04ubuntu1) vivid; urgency=medium
 
   * Port to KDE Frameworks 5
-    + Simplify ui file to accomodate size hinting problems with word wrap
+    + Simplify ui file to accommodate size hinting problems with word wrap
       and remove pointless spacers that could be replaced by layout spacing.
       Sizing policy was adjusted to fix word wrapping. Word wrapped labels now
       size minimum vertically which prevents the entire size hint from being
@@ -9,7 +9,7 @@ kde-config-whoopsie (14.10ubuntu0+git20140731.1) utopic; urgency=medium
       The ui continues to have a minimum width bound to the checkboxes as they
       do not wrap.
 
- -- Harald Sitter <apachelogger@kubuntu.org>  Wed, 16 Jul 2014 14:38:58 +0200
+ -- Harald Sitter <apachelogger@kubuntu.org>  Sat, 22 Nov 2014 18:54:38 +0100
 
 kde-config-whoopsie (14.04ubuntu2) trusty; urgency=low
 
