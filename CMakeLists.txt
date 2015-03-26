@@ -16,6 +16,9 @@ find_package(KF5Auth 5.0.0)
 find_package(KF5ConfigWidgets 5.0.0)
 find_package(KF5Service 5.0.0)
 
+# KI18N Translation Domain for this library
+add_definitions(-DTRANSLATION_DOMAIN=\"kcm-whoopsie\")
+
 add_subdirectory(src)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
