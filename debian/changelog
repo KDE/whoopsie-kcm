@@ -1,3 +1,9 @@
+kde-config-whoopsie (15.10ubuntu1) wily; urgency=medium
+
+  * Translation update release
+
+ -- Harald Sitter <sitter@kde.org>  Sat, 12 Sep 2015 21:19:37 +0200
+
 kde-config-whoopsie (15.04ubuntu2) vivid; urgency=medium
 
   * Set library translation domain so the kcm can load its translations
