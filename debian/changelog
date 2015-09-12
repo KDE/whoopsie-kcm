@@ -1,6 +1,7 @@
 kde-config-whoopsie (15.10ubuntu1) wily; urgency=medium
 
   * Translation update release
+  * No longer mangle translations as this thing now lives upstream.
 
  -- Harald Sitter <sitter@kde.org>  Sat, 12 Sep 2015 21:19:37 +0200
 

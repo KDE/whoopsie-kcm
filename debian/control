@@ -10,7 +10,6 @@ Build-Depends: cmake,
                libkf5service-dev,
                pkg-kde-tools (>= 0.15.3ubuntu7)
 Standards-Version: 3.9.6
-X-Ubuntu-Use-Langpack: yes
 
 Package: kde-config-whoopsie
 Architecture: any
