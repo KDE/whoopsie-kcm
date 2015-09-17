@@ -15,6 +15,7 @@ find_package(Qt5 5.0.0 CONFIG REQUIRED DBus)
 find_package(KF5Auth 5.0.0)
 find_package(KF5ConfigWidgets 5.0.0)
 find_package(KF5Service 5.0.0)
+find_package(KF5I18n 5.0.0)
 
 # KI18N Translation Domain for this library
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm-whoopsie\")
